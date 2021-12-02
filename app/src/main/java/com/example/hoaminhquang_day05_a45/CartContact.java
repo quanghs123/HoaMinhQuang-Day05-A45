@@ -7,15 +7,18 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class CartContact extends AppCompatActivity {
 
     ImageView btnBack;
-
+    List<ContactDemo> contactDemoList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cart_contact);
-
+        contactDemoList = new ArrayList<>();
         btnBack = findViewById(R.id.btnBack);
 
         Intent intent = new Intent(getBaseContext(),MainActivity.class);
@@ -26,6 +29,8 @@ public class CartContact extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
 
     }
 }

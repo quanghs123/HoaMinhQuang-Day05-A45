@@ -12,6 +12,12 @@ import java.util.List;
 
 public class ContactRecyclerViewAdapter extends RecyclerView.Adapter<ContactRecyclerViewAdapter.Viewoder> {
     List<ContactDemo> contactDemoList;
+    iOnClickContactRv iOnClickContactRv;
+
+    public void setiOnClickContactRv(com.example.hoaminhquang_day05_a45.iOnClickContactRv iOnClickContactRv) {
+        this.iOnClickContactRv = iOnClickContactRv;
+    }
+
     public ContactRecyclerViewAdapter(List<ContactDemo> contactDemoList) {
         this.contactDemoList = contactDemoList;
     }
@@ -32,7 +38,12 @@ public class ContactRecyclerViewAdapter extends RecyclerView.Adapter<ContactRecy
         ContactDemo contactDemo = contactDemoList.get(position);
         holder.tvName.setText(contactDemo.getName());
 
-
+        holder.tvName.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                iOnClickContactRv.onClickName(contactDemo.getName());
+            }
+        });
     }
 
     @Override

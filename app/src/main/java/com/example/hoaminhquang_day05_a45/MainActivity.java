@@ -20,12 +20,13 @@ public class MainActivity extends AppCompatActivity {
 
     RecyclerView rvList;
     List<ContactDemo> contactDemoList;
-    int dem;
     ContactDemo contact01,contact02,contact03,contact04,contact05,contact06;
     ContactRecyclerViewAdapter recyclerViewAdapter;
-    TextView tvPrice,tvThanks;
+    TextView tvPrice,tvThanks,tvCount;
     Button btnOrder;
     ImageView btnCart;
+    int dem=0;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         tvPrice = findViewById(R.id.tvPrice);
+        tvCount = findViewById(R.id.tvCount);
         tvThanks = findViewById(R.id.tvThanks);
         btnOrder = findViewById(R.id.btnOrder);
         btnCart = findViewById(R.id.btnCart);
@@ -60,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
         rvList.setLayoutManager(layoutManager);
         rvList.setAdapter(recyclerViewAdapter);
 
+
         Intent intent = new Intent(getBaseContext(),CartContact.class);
         btnCart.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,7 +77,18 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 tvPrice.setText(R.string.seventh_tv);
+                tvCount.setText(R.string.fifth_tv);
                 tvThanks.setText(R.string.last_tv);
+            }
+        });
+
+        recyclerViewAdapter.setiOnClickContactRv(new iOnClickContactRv() {
+            @Override
+            public void onClickName(String name) {
+                dem++;
+                tvPrice.setText(String.valueOf(10*dem));
+                tvCount.setText(String.valueOf(dem));
+
             }
         });
 
