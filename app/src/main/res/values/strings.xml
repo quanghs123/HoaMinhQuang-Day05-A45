@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">HoaMinhQuang-Day05-A45</string>
+    <string name="first_tv">Food order</string>
+    <string name="second_tv">Welcome KhoaHA</string>
+    <string name="third_tv">Total Price</string>
+    <string name="fourth_tv">Order</string>
+    <string name="fifth_tv">0</string>
+    <string name="sixth_tv">$</string>
+    <string name="seventh_tv">0</string>
+    <string name="last_tv">Thank you! Your order is eent to restourant!</string>
+
+    <!--    List-->
+    <string name="firstList">Pizza Panda</string>
+    <string name="secondList">KFC Super</string>
+    <string name="thirdList">Bread Eggs</string>
+    <string name="fourthList">Coca Cola</string>
+    <string name="fifthList">Chichken Super</string>
+    <string name="sixthList">Cup Cake</string>
+
+<!--    your order-->
+    <string name="yourOder">Your order</string>
+</resources>
