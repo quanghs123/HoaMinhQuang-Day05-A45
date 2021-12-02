@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
                 dem++;
                 tvPrice.setText(String.valueOf(10*dem));
                 tvCount.setText(String.valueOf(dem));
-
+                intent.putExtra("keyName",name);
             }
         });
 

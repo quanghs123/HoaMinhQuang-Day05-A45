@@ -1,6 +1,8 @@
 package com.example.hoaminhquang_day05_a45;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,15 +15,25 @@ import java.util.List;
 public class CartContact extends AppCompatActivity {
 
     ImageView btnBack;
-    List<ContactDemo> contactDemoList;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cart_contact);
-        contactDemoList = new ArrayList<>();
+
         btnBack = findViewById(R.id.btnBack);
 
         Intent intent = new Intent(getBaseContext(),MainActivity.class);
+
+        String name = intent.getStringExtra("keyName");
+
+
+
+
+
+
+
 
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
