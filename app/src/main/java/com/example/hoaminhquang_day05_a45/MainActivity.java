@@ -79,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
                 tvPrice.setText(R.string.seventh_tv);
                 tvCount.setText(R.string.fifth_tv);
                 tvThanks.setText(R.string.last_tv);
+                dem=0;
             }
         });
 
