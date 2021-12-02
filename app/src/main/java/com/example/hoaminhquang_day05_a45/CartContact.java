@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,7 +16,7 @@ import java.util.List;
 public class CartContact extends AppCompatActivity {
 
     ImageView btnBack;
-
+    int dem=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,15 +25,10 @@ public class CartContact extends AppCompatActivity {
 
         btnBack = findViewById(R.id.btnBack);
 
+
         Intent intent = new Intent(getBaseContext(),MainActivity.class);
 
         String name = intent.getStringExtra("keyName");
-
-
-
-
-
-
 
 
         btnBack.setOnClickListener(new View.OnClickListener() {

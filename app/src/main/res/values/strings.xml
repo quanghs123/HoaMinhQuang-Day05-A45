@@ -18,6 +18,11 @@
     <string name="fifthList">Chichken Super</string>
     <string name="sixthList">Cup Cake</string>
 
-<!--    your order-->
+    <!--    your order-->
     <string name="yourOder">Your order</string>
+
+<!--    login-->
+    <string name="userName">UserName</string>
+    <string name="pass">Password</string>
+    <string name="login">Login</string>
 </resources>
