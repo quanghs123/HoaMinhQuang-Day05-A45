@@ -17,24 +17,37 @@ public class CartContact extends AppCompatActivity {
 
     ImageView btnBack;
     int dem=0;
+    List<ContactDemo> contactDemoList;
+    RecyclerView rvList;
+    ContactRecyclerViewAdapter recyclerViewAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cart_contact);
 
+        rvList = findViewById(R.id.rvContact);
+        contactDemoList = new ArrayList<>();
+
         btnBack = findViewById(R.id.btnBack);
 
+        Intent intent = getIntent();
+        Intent intent1 = new Intent(getBaseContext(),MainActivity.class);
 
-        Intent intent = new Intent(getBaseContext(),MainActivity.class);
+        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getBaseContext(),1,RecyclerView.VERTICAL,false);
+
+        recyclerViewAdapter = new ContactRecyclerViewAdapter(contactDemoList);
+
+        rvList.setLayoutManager(layoutManager);
+        rvList.setAdapter(recyclerViewAdapter);
 
         String name = intent.getStringExtra("keyName");
-
+        contactDemoList.add(new ContactDemo(name));
 
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(intent);
+                startActivity(intent1);
             }
         });
 
