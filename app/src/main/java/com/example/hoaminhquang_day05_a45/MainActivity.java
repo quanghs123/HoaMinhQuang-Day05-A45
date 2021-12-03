@@ -79,6 +79,8 @@ public class MainActivity extends AppCompatActivity {
                 tvCount.setText("0");
                 tvThanks.setText(R.string.last_tv);
                 dem=0;
+                intent.putExtra("price","0");
+                intent.putExtra("keyName","");
             }
         });
 

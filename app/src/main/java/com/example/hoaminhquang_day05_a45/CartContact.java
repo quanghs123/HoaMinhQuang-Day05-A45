@@ -38,10 +38,9 @@ public class CartContact extends AppCompatActivity {
         Intent intent = getIntent();
         Intent intent1 = new Intent(getBaseContext(),MainActivity.class);
 
-        String name = intent.getStringExtra("keyName");
         tvPrice.setText(intent.getStringExtra("price"));
 
-        contactDemoList.add(new ContactDemo(name));
+        contactDemoList.add(new ContactDemo(intent.getStringExtra("keyName")));
 
         RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getBaseContext(),1,RecyclerView.VERTICAL,false);
 
