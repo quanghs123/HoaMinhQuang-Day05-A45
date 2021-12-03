@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,6 +21,8 @@ public class CartContact extends AppCompatActivity {
     List<ContactDemo> contactDemoList;
     RecyclerView rvList;
     ContactRecyclerViewAdapter recyclerViewAdapter;
+    TextView tvPrice;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,12 +30,18 @@ public class CartContact extends AppCompatActivity {
         setContentView(R.layout.activity_cart_contact);
 
         rvList = findViewById(R.id.rvContact);
+        tvPrice = findViewById(R.id.tvPrice);
         contactDemoList = new ArrayList<>();
 
         btnBack = findViewById(R.id.btnBack);
 
         Intent intent = getIntent();
         Intent intent1 = new Intent(getBaseContext(),MainActivity.class);
+
+        String name = intent.getStringExtra("keyName");
+        tvPrice.setText(intent.getStringExtra("price"));
+
+        contactDemoList.add(new ContactDemo(name));
 
         RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getBaseContext(),1,RecyclerView.VERTICAL,false);
 
@@ -41,8 +50,7 @@ public class CartContact extends AppCompatActivity {
         rvList.setLayoutManager(layoutManager);
         rvList.setAdapter(recyclerViewAdapter);
 
-        String name = intent.getStringExtra("keyName");
-        contactDemoList.add(new ContactDemo(name));
+
 
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override

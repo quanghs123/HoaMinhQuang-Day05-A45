@@ -9,7 +9,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -76,8 +75,8 @@ public class MainActivity extends AppCompatActivity {
         btnOrder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                tvPrice.setText(R.string.seventh_tv);
-                tvCount.setText(R.string.fifth_tv);
+                tvPrice.setText("0");
+                tvCount.setText("0");
                 tvThanks.setText(R.string.last_tv);
                 dem=0;
             }
@@ -90,6 +89,7 @@ public class MainActivity extends AppCompatActivity {
                 tvPrice.setText(String.valueOf(10*dem));
                 tvCount.setText(String.valueOf(dem));
                 intent.putExtra("keyName",name);
+                intent.putExtra("price",String.valueOf(10*dem));
             }
         });
 
