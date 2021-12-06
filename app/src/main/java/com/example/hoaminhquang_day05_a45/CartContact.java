@@ -23,7 +23,6 @@ public class CartContact extends AppCompatActivity {
     ContactRecyclerViewAdapter recyclerViewAdapter;
     TextView tvPrice;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,7 +38,6 @@ public class CartContact extends AppCompatActivity {
         Intent intent1 = new Intent(getBaseContext(),MainActivity.class);
 
         tvPrice.setText(intent.getStringExtra("price"));
-
         contactDemoList.add(new ContactDemo(intent.getStringExtra("keyName")));
 
         RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getBaseContext(),1,RecyclerView.VERTICAL,false);
